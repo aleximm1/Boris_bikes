@@ -1,0 +1,5 @@
+NameError
+/usr/bin/irb
+1
+it means the constant hasn't been defined
+define the DockingStation class
