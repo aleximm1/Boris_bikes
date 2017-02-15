@@ -23,4 +23,9 @@ describe DockingStation do
     subject.dock(bike)
     expect(subject.bike).to eq bike
   end
+
+  it 'raises error if more than one bike is taken before a bike is docked' do
+    subject.release_bike
+    expect{subject.release_bike}.to raise_error "No bikes available"
+  end
 end
