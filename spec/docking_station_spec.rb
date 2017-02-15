@@ -7,4 +7,8 @@ describe DockingStation do
   it 'get a bike' do
     expect(subject.release_bike).to be_a Bike
   end
+
+  it 'checks if bike is working' do
+    expect(subject.release_bike.working?).to be true
+  end
 end
