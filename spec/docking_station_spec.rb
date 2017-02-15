@@ -12,7 +12,9 @@ describe DockingStation do
     expect(subject.release_bike.working?).to be true
   end
 
-  it 'docks a bike' do
-    expect(subject.dock?).to be true
+  it {is_expected.to respond_to(:dock).with(1).argument}
+
+  it 'contains a bike' do
+    expect(subject).to respond_to (:bike)
   end
 end
