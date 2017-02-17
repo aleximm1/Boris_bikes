@@ -28,4 +28,10 @@ describe DockingStation do
     DockingStation::DEFAULT_CAPACITY.times {subject.dock(Bike.new)}
     expect{subject.dock(Bike.new)}.to raise_error "Docking station is full"
   end
+
+  it 'tests if changing the capacity when you create a new docking station changes how many bikes you can dock' do
+    station = DockingStation.new(10)
+    10.times {station.dock(Bike.new)}
+    expect{station.dock(Bike.new)}.to raise_error "Docking station is full"
+  end
 end
