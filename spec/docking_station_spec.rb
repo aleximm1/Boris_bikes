@@ -11,7 +11,7 @@ describe DockingStation do
 
   it 'checks if bike is working' do
     subject.dock(Bike.new)
-    expect(subject.release_bike.working?).to be true
+    expect(subject.release_bike.working).to be true
   end
 
   it {is_expected.to respond_to(:dock).with(1).argument}
@@ -34,4 +34,10 @@ describe DockingStation do
     10.times {station.dock(Bike.new)}
     expect{station.dock(Bike.new)}.to raise_error "Docking station is full"
   end
+
+  # it 'finds out if the bike being returned is broken' do
+  #   bike = Bike.new
+  #
+  #   expect{subject.dock(bike)}.to
+  # end
 end
