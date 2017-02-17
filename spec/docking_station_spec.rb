@@ -35,6 +35,13 @@ describe DockingStation do
     expect{station.dock(Bike.new)}.to raise_error "Docking station is full"
   end
 
+  # let (:bike) { double(:bike) }
+  # it 'checks if the released bike works' do
+  #   allow(bike).to receive(:bike.working).and_return(true)
+  #   subject.dock(bike)
+  #   bike = subject.release_bike
+  #   expects(bike.working).to be true
+  # end
   # it 'finds out if the bike being returned is broken' do
   #   bike = Bike.new
   #

@@ -14,9 +14,9 @@ class DockingStation
     if @bikes.empty?
       raise "No bikes available"
     else
-      bike = @bikes[0]
-      @bikes = @bikes.drop(1)
-      bike
+      working_bike = give_working_bike
+      @bikes.delete(working_bike)
+      working_bike
     end
   end
 
@@ -26,6 +26,10 @@ class DockingStation
     else
       @bikes << bike
     end
+  end
+
+  def give_working_bike
+    @bikes.select(&:working)[0]
   end
 
   private
